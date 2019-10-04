@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <title>Code Quiz</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <div
+        class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+      >
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="highscores.html">View Highscores</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-collapse collapse w-100 order-2 order-md-0 dual-collapse2">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <p >Questions Left: <span id="qsLeft">5</span></p>
+            </li>
+          </ul>
+      <div class="navbar w-100 order-3">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <p>Time Left:<span id="timer">75</span> seconds</p>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <div class="jumobtron">
+        <div id="quiz"></div>
+        <button class="btn btn-large" id="start-quiz">Start Quiz</button>
+        <div id="question"></div>
+        <div id="choices"></div>
+          <button class="btn" id="btn1"></button>
+          <button class="btn" id="btn2"></button>
+          <button class="btn" id="btn3"></button>
+          <button class="btn" id="btn4"></button>
+          <button class="btn" id="btn5"></button>
+          <button class="btn" id="btn6"></button>
+        <hr />
+        <div id="feedback"></div>
+      </div>
+      
+      </div>
+    
+    <script src="script.js"></script>
+    <script src="questions.js"></script>
+  </body>
+</html>
