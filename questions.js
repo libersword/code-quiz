@@ -31,5 +31,3 @@ var questions = [
   }
 ];
 
-//store these questions in local storage for retrieval 
-localStorage.setItem("questions", JSON.stringify(questions));

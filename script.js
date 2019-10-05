@@ -1,29 +1,42 @@
-//timer stuff
-//quiz stuff
+var start = document.getElementById("start-quiz");
+start.addEventListener("click", function(){
+  //startTimer();
+  startQuiz();
+})
 
-//Declare all of the variables that exist in the HTML document to be populated with javascript
-
-//Declare variables to be used in the functions
 var score = 0;
-var questionIndex = 0;
+var currentQuestion = 0;
 var questionArray = questions;
 
+function startQuiz(){
+  //startTimer();
+  if(currentQuestion === questionArray.length){
+    return;
+  }
+  else{
+    var questionDiv = document.getElementById("question");
+    var questionDisplay = document.createElement('h2');
+    questionDisplay.textContent = renderQuestion();
+    questionDiv.appendChild(questionDisplay);
 
-//Quiz Functions
-//Start the quiz
+    var choicesDiv = document.getElementById("choices");
+    for (i in questionArray[currentQuestion]['choices']){
+      var choicesDisplay = document.createElement("button");
+      choicesDisplay.textContent = questionArray[currentQuestion]['choices'][i];
+      console.log(choicesDisplay); 
+      choicesDiv.appendChild(choicesDisplay);
+    }
+    //renderChoices();
+  }
+}
+function renderQuestion(){
+  return questionArray[currentQuestion]['title'];
+}
 
-//Render the Questions and their choices
+function renderChoices(){
+  return questionArray[currentQuestion]['choices'];
+}
 
-//Listen for a button click, check that answer against the correct answer
 
-//If correct add 1 to the score and render the next question
-
-//If incorrect, subtract from timer and take away from the score then render the next question
-
-//do this for all questions until the entire array has been iterated through
-
-//render the highscore screen
-
-//Allow user input and store the initials with the score
-
-//allow for the quiz to start over
+renderQuestion();
+renderChoices();
