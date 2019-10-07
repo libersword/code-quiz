@@ -17,6 +17,7 @@ var scoreForm = document.getElementById('hidden');
 scoreForm.style.display = 'none';
 var yourScore = document.querySelector(".yourScore");
 var submitBtn = document.getElementById('submit');
+var main = document.getElementById('main-container');
 
 //timer variables
 var totalSeconds = questionArray.length * 15;
@@ -142,6 +143,7 @@ function stopQuiz(){
   totalSeconds=0;
   var finalScore = score;
   console.log(finalScore);
+  main.parentNode.removeChild(main);
   scoreForm.setAttribute('id', 'show');
   scoreForm.style.display = 'block';
   yourScore.textContent = ' ' + finalScore;

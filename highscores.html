@@ -10,29 +10,30 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Text&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css" />
   <title>Highscores</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div
-          class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+          class="navbar w-100 order-1 order-md-0 dual-collapse2"
         >
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Home</a>
+              <a class="nav-link" href="home.html">Home</a>
             </li>
           </ul>
         </div>
         <div class="navbar w-100 order-3">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <p>Time Left:<span id="timer"></span> seconds</p>
+              <p>Time Left:<span id="timer"></span></p>
             </li>
           </ul>
         </div>
       </nav>
-      <div class="card">
+      <div class="jumbotron">
         <h2>Highscores:</h2>
       <ul id="highscores-list"></ul>
       <button class='btn btn-danger' id = 'clear'>Clear Scores</button>
