@@ -35,7 +35,7 @@ var secondsDisplay = document.getElementById("timer");
 var totalScore = 0;
 
 //Timer
-function startTimer() {
+var startTimer = function() {
   interval = setInterval(function() {
     secondsElapsed++;
     renderTime();
@@ -46,7 +46,6 @@ function startTimer() {
 function renderTime(){
   var secondsLeft = totalSeconds - secondsElapsed;
   secondsDisplay.textContent = secondsLeft;
-
   if (secondsElapsed >= totalSeconds) {
    secondsDisplay.textContent = 0;
    stopTimer();
@@ -55,23 +54,23 @@ function renderTime(){
     outofTime();
    }
   }
-
+  
+  //stopping the timer
+    function stopTimer(){
+      clearInterval(interval);
+      currentQuestion = 0;
+    }
   //function for displaying out of time message and restarting quiz
   var outofTime = function() {
     clearLastAnswer();
     feedback.textContent = "You ran out of time! No points for you, because it's zero anyway."
     score = 0;
-    currentQuestion = 0;
     restartBtn.style.display = 'block';
     restartBtn.textContent = "Restart Quiz?";
     restartBtn.addEventListener('click', function(){
     window.location.reload();
     })
 }
-//stopping the timer
-  function stopTimer(){
-    clearInterval(interval);
-  }
 
 //run the quiz!
 function runQuiz(){
