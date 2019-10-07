@@ -145,15 +145,21 @@ function stopQuiz(){
   scoreForm.setAttribute('id', 'show');
   scoreForm.style.display = 'block';
   yourScore.textContent = ' ' + finalScore;
-  submitBtn.addEventListener("click"  ,function() {submit()});
 }
 
-var submit = function() {
+submitBtn.addEventListener("click",function(event) {
+  event.preventDefault();
   var initialsInput = document.getElementById("initials");
   var highscores = JSON.parse(localStorage.getItem('allScores')) || [];
   highscores.push({initials:initialsInput.value, score:yourScore.innerText})
   localStorage.setItem("allScores", JSON.stringify(highscores));
-  window.location="highscores.html";
+  return redirect();
+},false);
+
+  
+
+function redirect(){
+  window.location.href = "highscores.html" ;
 }
 
 
