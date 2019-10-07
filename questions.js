@@ -7,27 +7,27 @@ var questions = [
   {
     title: "What HTML element is javascript put into?",
     choices: ["<js>", "<java>", "<script>", "<javascripts>"],
-    answer: "parentheses"
+    answer: "<script>"
   },
   {
     title: "How do you change HTML in javascript?",
     choices: [".innerHTML", ".changeThis", ".textContent", ".newText"],
-    answer: "parentheses"
+    answer: ".innerHTML"
   },
   {
     title: "The javascript should be loaded in the _____?",
     choices: ["body tag", "what javascript", "head tag", "title tag"],
-    answer: "parentheses"
+    answer: "body tag"
   },
   {
     title: "Script file is called with _____?",
     choices: ["href", "link", "javascript", "src"],
-    answer: "parentheses"
+    answer: "src"
   },
   {
     title: "Which of these creates a function?",
     choices: ["function MyFunction()", "function.Myfunction()", "function = MyFunction()", "function {Function()}"],
-    answer: "parentheses"
+    answer: "function MyFunction()"
   }
 ];
 
