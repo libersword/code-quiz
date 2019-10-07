@@ -13,7 +13,10 @@ var questionDisplay = document.createElement('h2');
 var choicesDiv = document.getElementById("choices");
 var feedback = document.getElementById('feedback');
 var highscores = document.createElement('h2');
-
+var scoreForm = document.getElementById('hidden');
+scoreForm.style.display = 'none';
+var yourScore = document.querySelector(".yourScore");
+var submitBtn = document.getElementById('submit');
 
 //timer variables
 var totalSeconds = questionArray.length * 15;
@@ -113,6 +116,7 @@ function checkAnswer(userGuess, answer) {
     
   }
   else{
+    score--;
     totalSeconds-=15;
     feedback.textContent = "Try Again"
     return; 
@@ -137,7 +141,19 @@ function stopQuiz(){
   feedback.innerHTML = '';
   totalSeconds=0;
   var finalScore = score;
-  window.location.href='highscores.html';
+  console.log(finalScore);
+  scoreForm.setAttribute('id', 'show');
+  scoreForm.style.display = 'block';
+  yourScore.textContent = ' ' + finalScore;
+  submitBtn.addEventListener("click"  ,function() {submit()});
+}
+
+var submit = function() {
+  var initialsInput = document.getElementById("initials");
+  var highscores = JSON.parse(localStorage.getItem('allScores')) || [];
+  highscores.push({initials:initialsInput.value, score:yourScore.innerText})
+  localStorage.setItem("allScores", JSON.stringify(highscores));
+  window.location="highscores.html";
 }
 
 

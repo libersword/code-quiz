@@ -41,8 +41,21 @@
         <div id="feedback"></div>
         <div id="score-number"></div>
       </div>
-      
       </div>
+      <div class="clearfix" id="hidden">
+          <div class="card">
+            <h2>Highscores</h2>
+            <h3>Your Score is<span class='yourScore'></span></h3><br/>
+            <form method="POST">
+              <div class="input-group">
+                
+                <label for="initials">Enter Your Initials</label>
+                <input type="text" name="initials" id="initials" />
+              </div>
+              <button id="submit">Submit</button>
+              <div id="msg"></div>
+            </form>
+          </div>
     
       <script src="questions.js"></script>
       <script src ="highscores.js"></script>
